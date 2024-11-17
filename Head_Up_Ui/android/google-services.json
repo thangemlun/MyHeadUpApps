@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "213209070709",
+    "project_id": "head-up-644cb",
+    "storage_bucket": "head-up-644cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213209070709:android:5141a3db9e4914b7e60c3c",
+        "android_client_info": {
+          "package_name": "com.headup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213209070709-40a1mjd2efntvmoqs5mm9cevpn5en539.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeARSdRHeZCAz4D04LXtM-QdPx9M5euxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213209070709-40a1mjd2efntvmoqs5mm9cevpn5en539.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
