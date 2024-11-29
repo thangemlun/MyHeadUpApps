@@ -13,7 +13,6 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
           await Future.delayed(Duration(milliseconds: 500));
           emit(NoteViewState());
         case SaveNoteEvent():
-          print("Save note event");
           emit(NoteSaveState());
         default:
       }

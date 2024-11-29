@@ -13,8 +13,9 @@ import java.io.Serializable;
 public class MessageResponse implements Serializable {
     private String message;
 	private Boolean success;
+    private Object data;
 
     public static MessageResponse apiError(String message) {
-        return new MessageResponse(message, ResponseStatusEnum.FAILED.getStatus());
+        return new MessageResponse(message, ResponseStatusEnum.FAILED.getStatus(), null);
     }
 }

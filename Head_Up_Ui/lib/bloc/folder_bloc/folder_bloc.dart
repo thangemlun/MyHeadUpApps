@@ -38,19 +38,16 @@ class FolderBloc extends Bloc<FolderEvent, FolderState> {
     await Future.delayed(Duration(microseconds: 500));
     List<Folder> folders = await folderStorage.getAllFolders();
     blocFolders = folders;
-    print("Get Folder Event");
     emit(LoadFolderState(blocFolders));
   }
 
   Future triggerSaveFolderEvent(SaveFolderEvent event, Emitter emit) async {
     emit(FolderInitial());
-    print('done emit init');
     await Future.delayed(Duration(microseconds: 500));
   }
 
   Future triggerFilterFolderEvent(FilterFolderEvent event, Emitter emit) async {
     emit(FolderInitial());
-    print("FILTER FOLDER ${event.filterBy}");
     List<Folder> folders = await folderStorage.getAllFolders();
     blocFolders = folders;
     if (event.filterBy == "name") {

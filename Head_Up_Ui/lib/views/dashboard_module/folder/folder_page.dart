@@ -54,7 +54,6 @@ class FolderPageState extends State<FolderPage> {
                                 builder: (context) =>
                                     ReminderNotePage(folderName: folderName)))
                         .then((value) {
-                      print("note page pop out");
                       folderBloc.add(GetSingleFolderEvent(folderName));
                     });
                   },
@@ -71,7 +70,7 @@ class FolderPageState extends State<FolderPage> {
                     return _toolTipWidget(folder);
                   case ErrorFolderState():
                     String errMsg = state.errMsg;
-                    ToastificationUtil.toast(errMsg, ToastificationType.error, Alignment.topRight);
+                    ToastificationUtil.toast(errMsg, ToastificationType.error);
                     Future.delayed(const Duration(seconds: 3)).then((value) {
                       Navigator.pop(context);
                     });

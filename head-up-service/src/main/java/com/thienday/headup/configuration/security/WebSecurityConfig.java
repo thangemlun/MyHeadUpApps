@@ -25,6 +25,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
+import static com.thienday.headup.constants.AppEnvironmentLoader.WHITE_LIST;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
@@ -62,7 +64,7 @@ public class WebSecurityConfig {
                 .exceptionHandling().authenticationEntryPoint(myAuthenticationEntryPoint()).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers(WHITE_LIST).permitAll()
                 .anyRequest().authenticated().and()
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);

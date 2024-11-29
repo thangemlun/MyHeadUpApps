@@ -15,7 +15,7 @@ class FolderServiceImpl implements FolderService {
     // TODO: implement saveFolder
     Folder? oldOne = await folderStorage.getFolder(folder.folderName);
     if (oldOne != null) {
-      ToastificationUtil.toast("Folder name existed", ToastificationType.error, Alignment.topRight);
+      ToastificationUtil.toast("Folder name existed", ToastificationType.error);
       return false;
     }
     return true;

@@ -19,7 +19,6 @@ class UserInfoBloc extends Bloc<UserInfoEvent, UserInfoState> {
     on<UserInfoEvent>((event, emit) async {
       switch(event) {
         case GetUserInfoEvent():
-          print("Get user event");
           emit(UserInfoInitial());
           UserInfo userInfo = await userService.getUserInfo();
           await Future.delayed(Duration(seconds: 2));

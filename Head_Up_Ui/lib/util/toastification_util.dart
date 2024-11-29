@@ -5,7 +5,7 @@ import 'package:toastification/toastification.dart';
 
 class ToastificationUtil {
 
-  static void toast(String message, ToastificationType type, Alignment alignment) {
+  static void toast(String message, ToastificationType type, {Alignment alignment = Alignment.topRight}) {
     toastification.show(// optional if you use ToastificationWrapper
       type: type,
       style: ToastificationStyle.fillColored,

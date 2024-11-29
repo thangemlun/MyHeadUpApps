@@ -2,6 +2,7 @@ package com.thienday.headup.configuration.security.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thienday.headup.response.AuthorizedErrorResponse;
+import com.thienday.headup.response.MessageResponse;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,8 +23,7 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setCharacterEncoding("UTF-8");
-		response.getWriter().write(mapper.writeValueAsString(new AuthorizedErrorResponse(Instant.now().toString(),
-                HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized", errMes, request.getRequestURI()))
+		response.getWriter().write(mapper.writeValueAsString(MessageResponse.apiError(errMes))
         );
     }
 

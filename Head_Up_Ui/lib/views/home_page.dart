@@ -37,7 +37,6 @@ class HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    print("init state");
     super.initState();
   }
 
@@ -70,11 +69,9 @@ class HomePageState extends State<HomePage> {
                   builder: (context, state) {
                 switch (state) {
                   case UserInfoInitial():
-                    print("initial state");
                     return Skeleton(
                         MyAppBar(UserInfo.skeleton_data, _scaffoldKey));
                   case LoadUserState():
-                    print("load state");
                     userInfo = state.userInfo;
                     return MyAppBar(userInfo, _scaffoldKey);
                   default:

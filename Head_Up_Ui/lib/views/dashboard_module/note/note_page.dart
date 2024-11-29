@@ -15,7 +15,6 @@ import 'package:head_up_ui/environment/app_properties.dart';
 import 'package:head_up_ui/services/impl/note_service_impl.dart';
 import 'package:head_up_ui/util/toastification_util.dart';
 import 'package:head_up_ui/views/shared/skeleton.dart';
-import 'package:hive/hive.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:toastification/toastification.dart';
 import 'package:uuid/uuid.dart';
@@ -139,7 +138,6 @@ class ReminderNotePageState extends State<ReminderNotePage> {
 
   void saveNote() async {
     try {
-      print("save note action");
       String json = jsonEncode(_controller.document.toDelta().toJson());
       String plainText = _controller.document.toPlainText();
       Note saveItem = new Note(
@@ -151,9 +149,9 @@ class ReminderNotePageState extends State<ReminderNotePage> {
           updatedAt: DateTime.now());
       await _noteService.saveNote(saveItem, folderName);
 
-      ToastificationUtil.toast("Save note successfully", ToastificationType.success, Alignment.center);
+      ToastificationUtil.toast("Save note successfully", ToastificationType.success, alignment: Alignment.center);
     } catch (e) {
-      ToastificationUtil.toast(e.toString(), ToastificationType.error, Alignment.center);
+      ToastificationUtil.toast(e.toString(), ToastificationType.error, alignment:  Alignment.center);
     }
   }
 

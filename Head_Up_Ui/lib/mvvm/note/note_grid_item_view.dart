@@ -61,7 +61,7 @@ class NoteGridItemView extends StatelessWidget {
                           onPressed: () {
                             viewModel.activeOpacity();
                           },
-                          icon: Icon(Boxicons.bx_dots_horizontal_rounded)),
+                          icon: Icon(Boxicons.bx_dots_vertical)),
                     ),
                   ),
                 ],
@@ -131,16 +131,18 @@ class NoteGridItemView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // TITLE NOTE
           Container(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              _doEllipsis(note.title, 9),
+              _doEllipsis(note.title, 15),
               style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             ),
           ),
+          // CONTENT NOTE
           Container(
             padding: EdgeInsets.all(8.0),
             child: Text(

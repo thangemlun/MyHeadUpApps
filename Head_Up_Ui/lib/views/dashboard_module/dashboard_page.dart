@@ -194,13 +194,13 @@ class _DashboardPageState extends State<DashboardPage> {
                         .then((valid) async {
                       if (valid) {
                         await folderService.saveFolder(folder);
-                        ToastificationUtil.toast("Add folder successfully", ToastificationType.success, Alignment.topRight);
+                        ToastificationUtil.toast("Add folder successfully", ToastificationType.success);
                         folderBloc.add(FilterFolderEvent(filterBy));
                         Navigator.of(context, rootNavigator: true).pop();
                       }
                     });
                   } else {
-                    ToastificationUtil.toast("Folder name can not be empty", ToastificationType.error, Alignment.topRight);
+                    ToastificationUtil.toast("Folder name can not be empty", ToastificationType.error);
                   }
                 },
                 child: const Padding(

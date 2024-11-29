@@ -16,7 +16,6 @@ void main() async {
   await initLocalStorage();
   await Hive.initFlutter();
   Hive.registerAdapter(NoteAdapter());
-  await Hive.openBox(AppProperties.APP_BOX);
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

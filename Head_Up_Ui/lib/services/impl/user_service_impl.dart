@@ -18,9 +18,9 @@ class UserServiceImpl extends UserService {
   @override
   Future<UserInfo> getUserInfo() async {
     // TODO: implement getUserInfo
-    Response? response;
-    response = (await HttpUtil<UserInfo>().get("${AppConstant.HeadUpBeHost + USER_API}/user-info")) as Response?;
-    return UserInfo.fromJson(response!.data as Map<String, dynamic>);
+    Response response;
+    response = (await HttpUtil<UserInfo>().get("${AppConstant.HeadUpBeHost + USER_API}/user-info"));
+    return UserInfo.fromJson(response.data as Map<String, dynamic>);
   }
 
   @override
@@ -30,7 +30,7 @@ class UserServiceImpl extends UserService {
     String api = '${AppConstant.HeadUpBeHost + USER_API}/update';
     Spinner.trigger(context);
     resp = await HttpUtil<UserInfo>().put(api, body: jsonEncode(request));
-    ToastificationUtil.toast(resp.message, ToastificationType.success, Alignment.topRight);
+    ToastificationUtil.toast(resp.message, ToastificationType.success);
     Spinner.off(context);
   }
 
